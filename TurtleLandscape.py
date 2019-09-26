@@ -26,6 +26,10 @@ Slug.turtlesize(.1)
 fluffy = turtle.Turtle()
 fluffy.speed(100)
 fluffy.turtlesize(.1)
+shatter = turtle.Turtle()
+shatter.speed(100)
+shatter.turtlesize(.1)
+
 
 def house():
     for i in range(2):
@@ -48,6 +52,26 @@ def door():
         Kale.forward(120)
         Kale.left(90)
 
+def cloud():
+    for i in range(1):
+        fluffy.begin_fill()
+        fluffy.circle(60)
+        fluffy.forward(30)
+        fluffy.circle(40)
+        fluffy.forward(30)
+        fluffy.circle(33)
+        fluffy.backward(100)
+        fluffy.circle(70)
+        fluffy.backward(50)
+        fluffy.circle(50)
+        fluffy.backward(45)
+        fluffy.circle(30)
+        fluffy.end_fill()
+
+def window():
+    for i in range(4):
+        shatter.right(90)
+        shatter.forward(75)
 
 sheldon.penup()
 sheldon.goto(-718,-325)
@@ -111,17 +135,27 @@ fluffy.penup()
 fluffy.goto(-300,275)
 fluffy.pendown()
 fluffy.color("seashell")
+cloud()
+fluffy.penup()
+fluffy.goto(290,220)
+fluffy.pendown()
+cloud()
+fluffy.penup()
+fluffy.goto(-350,-20)
+fluffy.penup()
+cloud()
 
-fluffy.begin_fill()
-fluffy.circle(60)
-fluffy.forward(30)
-fluffy.circle(40)
-fluffy.forward(30)
-fluffy.circle(33)
-fluffy.backward(100)
-fluffy.circle(70)
-fluffy.backward(40)
-fluffy.circle(50)
-fluffy.end_fill
+shatter.penup()
+shatter.goto(-5, -100)
+shatter.pendown()
+shatter.color("lavender")
+shatter.begin_fill()
+window()
+shatter.penup()
+shatter.goto(150,-100)
+shatter.pendown()
+window()
+shatter.end_fill()
+
 
 turtle.exitonclick()
