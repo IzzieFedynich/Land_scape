@@ -29,7 +29,9 @@ fluffy.turtlesize(.1)
 shatter = turtle.Turtle()
 shatter.speed(100)
 shatter.turtlesize(.1)
-
+leif = turtle.Turtle()
+leif.speed(10)
+leif.turtlesize(.1)
 
 def house():
     for i in range(2):
@@ -72,6 +74,40 @@ def window():
     for i in range(4):
         shatter.right(90)
         shatter.forward(75)
+
+def treetrunk():
+    for i in range(2):
+        leif.forward(90)
+        leif.left(90)
+        leif.forward(300)
+        leif.left(90)
+
+def tree():
+    for i in range(1):
+        leif.color("saddle brown")
+        leif.begin_fill()
+        treetrunk()
+        leif.end_fill()
+        leif.forward(20)
+        leif.left(90)
+        leif.forward(300)
+        leif.color("forest green")
+        leif.begin_fill()
+        leif.circle(90)
+        leif.right(45)
+        leif.forward(20)
+        leif.circle(80)
+        leif.right(45)
+        leif.forward(75)
+        leif.circle(70)
+        leif.right(200)
+        leif.forward(20)
+        leif.circle(100)
+        leif.right(45)
+        leif.forward(90)
+        leif.circle(70)
+        leif.end_fill()
+
 
 sheldon.penup()
 sheldon.goto(-718,-325)
@@ -156,6 +192,11 @@ shatter.goto(150,-100)
 shatter.pendown()
 window()
 shatter.end_fill()
+
+leif.penup()
+leif.goto(360,-330)
+leif.pendown()
+tree()
 
 
 turtle.exitonclick()
